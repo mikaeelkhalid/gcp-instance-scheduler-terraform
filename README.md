@@ -1,1 +1,1 @@
-# gcp-instance-scheduler-terraform
+# GCP Instance Scheduler using Terraform
