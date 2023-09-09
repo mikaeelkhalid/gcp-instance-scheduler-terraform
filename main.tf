@@ -16,3 +16,9 @@ resource "google_cloud_scheduler_job" "cr_job" {
 resource "google_storage_bucket" "bucket" {
   name = var.scheduler_function_bucket
 }
+
+resource "google_storage_bucket_object" "archive" {
+  name   = "zip file name"
+  bucket = google_storage_bucket.bucket.name
+  source = "path/zip file name"
+}
