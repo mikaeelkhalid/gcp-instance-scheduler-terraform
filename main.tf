@@ -27,3 +27,14 @@ resource "google_service_account" "svc_acc" {
   account_id   = "instance-scheduler-svc-acc"
   display_name = "instance-scheduler-svc-acc"
 }
+
+resource "google_project_iam_custom_role" "svc_acc_custom_role" {
+  role_id     = "instance.scheduler"
+  title       = "Instance Scheduler Role"
+  description = "Ability to turn off instances with a specific label."
+  permissions = [
+    "compute.instances.list",
+    "compute.instances.stop",
+    "compute.zones.list",
+  ]
+}
