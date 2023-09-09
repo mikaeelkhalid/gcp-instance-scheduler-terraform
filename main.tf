@@ -38,3 +38,13 @@ resource "google_project_iam_custom_role" "svc_acc_custom_role" {
     "compute.zones.list",
   ]
 }
+
+resource "google_project_iam_member" "svc_acc_iam_member" {
+  project = var.gcp_project
+  role    = "projects/${var.project}/roles/${google_project_iam_custom_role.svc_acc_custom_role.role_id}"
+  member  = "serviceAccount:${google_service_account.svc_acc.email}"
+
+  depends_on = [
+    google_service_account.svc_acc
+  ]
+}
