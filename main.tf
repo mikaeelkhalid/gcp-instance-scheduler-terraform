@@ -22,3 +22,8 @@ resource "google_storage_bucket_object" "archive" {
   bucket = google_storage_bucket.bucket.name
   source = "path/zip file name"
 }
+
+resource "google_service_account" "svc_acc" {
+  account_id   = "instance-scheduler-svc-acc"
+  display_name = "instance-scheduler-svc-acc"
+}
