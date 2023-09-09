@@ -12,3 +12,7 @@ resource "google_cloud_scheduler_job" "cr_job" {
     data       = base64encode("foo, bar..")
   }
 }
+
+resource "google_storage_bucket" "bucket" {
+  name = var.scheduler_function_bucket
+}
