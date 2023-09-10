@@ -14,7 +14,7 @@ The system works by:
    - For each zone, list all VM instances with a specific label.
    - If the VM instance is running, it is shut down.
 
-## Files
+## Files Structure
 
 - `gcp_function/main.py`: The Cloud Function script.
 - `gcp_function/requirements.txt`: The Cloud Function dependencies.
