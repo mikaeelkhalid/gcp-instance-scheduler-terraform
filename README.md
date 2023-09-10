@@ -68,7 +68,3 @@ For cron, you can use this website: https://crontab.guru
 
 Feel free to raise issues or pull requests if you'd like to improve the configurations or add more features.
 
----
-
-Note: This README assumes that the user has basic knowledge of GCP and Terraform. Depending on the audience, you may need to provide more detailed instructions or prerequisites. Adjust the document as necessary.
-
