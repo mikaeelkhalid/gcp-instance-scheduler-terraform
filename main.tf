@@ -48,3 +48,33 @@ resource "google_project_iam_member" "svc_acc_iam_member" {
     google_service_account.svc_acc
   ]
 }
+
+resource "google_cloudfunctions_function" "instance_scheduler_function" {
+  name                  = "instance-scheduler-function"
+  available_memory_mb   = 128
+  source_archive_bucket = google_storage_bucket.bucket.name
+  source_archive_object = google_storage_bucket_object.archive.name
+  runtime               = "python38"
+  description           = "Cloud function to do the instance scheduling."
+
+  event_trigger {
+    event_type = "google.pubsub.topic.publish"
+    resource   = google_pubsub_topic.topic.name
+    failure_policy {
+      retry = false
+    }
+  }
+
+  timeout               = 180
+  entry_point           = "instance_scheduler_start"
+  service_account_email = google_service_account.svc_acc.email
+
+  environment_variables = {
+    PROJECT     = var.gcp_project
+    LABEL_KEY   = var.label_key
+    LABEL_VALUE = var.label_value
+  }
+  depends_on = [
+    google_service_account.svc_acc
+  ]
+}
