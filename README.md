@@ -62,6 +62,8 @@ The system works by:
 
 To use a different label or time, update the values in `variables.tf`.
 
+For cron, you can use this website: https://crontab.guru
+
 ## Contributing
 
 Feel free to raise issues or pull requests if you'd like to improve the configurations or add more features.
