@@ -9,3 +9,11 @@ variable "cron_pattern" {
 variable "scheduler_function_bucket" {
   default = "your bucket name here"
 }
+
+variable "label_key" {
+  default = "instance-scheduler"
+}
+
+variable "label_value" {
+  default = "enabled"
+}
