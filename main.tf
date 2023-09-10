@@ -18,9 +18,9 @@ resource "google_storage_bucket" "bucket" {
 }
 
 resource "google_storage_bucket_object" "archive" {
-  name   = "zip file name"
+  name   = "function.zip"
   bucket = google_storage_bucket.bucket.name
-  source = "path/zip file name"
+  source = "gcp_function/function.zip"
 }
 
 resource "google_service_account" "svc_acc" {
