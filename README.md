@@ -14,7 +14,7 @@ The system works by:
    - For each zone, list all VM instances with a specific label.
    - If the VM instance is running, it is shut down.
 
-## Files
+## Files Structure
 
 - `gcp_function/main.py`: The Cloud Function script.
 - `gcp_function/requirements.txt`: The Cloud Function dependencies.
@@ -62,11 +62,9 @@ The system works by:
 
 To use a different label or time, update the values in `variables.tf`.
 
+For cron, you can use this website: https://crontab.guru
+
 ## Contributing
 
 Feel free to raise issues or pull requests if you'd like to improve the configurations or add more features.
-
----
-
-Note: This README assumes that the user has basic knowledge of GCP and Terraform. Depending on the audience, you may need to provide more detailed instructions or prerequisites. Adjust the document as necessary.
 
