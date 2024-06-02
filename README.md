@@ -4,6 +4,8 @@
 
 This project contains Terraform configurations and a Cloud Function in Python to schedule the shutdown of GCP VM instances based on specific labels.
 
+For complete and detail explanations, please visit a blog [post](https://blog.mikaeels.com/gcp-instance-scheduler-using-terraform).
+
 ## Overview
 
 The system works by:
